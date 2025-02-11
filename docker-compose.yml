@@ -1,0 +1,16 @@
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongo-video
+    ports:
+      - "27018:27017"
+    volumes:
+      # Mapeia um volume local para persistir os dados do MongoDB
+      - ./data:/data/db
+      # Mapeia o script de inicialização para o MongoDB
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js
+    environment:
+      # Referencie as variáveis de ambiente do arquivo .env
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+    restart: unless-stopped

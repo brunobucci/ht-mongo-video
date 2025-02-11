@@ -1,6 +1,6 @@
 # SOAT7GRUPO5 - Hackaton
 
-### Repositório: Infra 
+### Repositório: MongoBD Videos 
 
 ### Repositórios do projeto:
 <b>Infra Kubernets:</b> https://github.com/brunobucci/ht-infra<br>
